@@ -46,4 +46,24 @@ export default class ListController {
     _drawLists();
   }
 
+  deleteListConfirm(id) {
+    var r = confirm("Are You Sure!");
+    if (r == true) {
+      ListService.deleteList(id);
+      _drawLists();
+    } else {
+      return
+    }
+  }
+
+  deleteListItemConfirm(listId, listIndex) {
+    var r = confirm("Are You Sure!");
+    if (r == true) {
+      ListService.deleteListItem(listId, listIndex);
+      _drawLists();
+    } else {
+      return
+    }
+  }
+
 }

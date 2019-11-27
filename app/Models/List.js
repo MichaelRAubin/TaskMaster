@@ -14,7 +14,7 @@ export default class List {
     <div class="card mt-3 card-background">
       <div class="card-body">
         <h5 class="card-title">${this.title}</h5>
-         <button class="btn btn-danger" onclick="app.listController.deleteList('${
+         <button class="btn btn-danger" onclick="app.listController.deleteListConfirm('${
       this.id
       }')">Delete</button>
       <form onsubmit="app.listController.addListItems(event, '${this.id}')">
@@ -38,7 +38,7 @@ export default class List {
   getListItemTemplate() {
     let template = "";
     this.listItems.forEach((listItem, index) => {
-      template += `<li>${listItem} <span onclick="app.listController.deleteListItems('${this.id}', ${index})">X</span></li>`;
+      template += `<li>${listItem} <span onclick="app.listController.deleteListItemConfirm('${this.id}', ${index})">X</span></li>`;
     });
     return template;
   }
