@@ -15,3 +15,11 @@ html, body {
 .card-background {
     background: greenyellow;
 }
+
+.user-select {
+    user-select: none;
+}
+
+.img-pointer {
+    cursor: pointer;
+}

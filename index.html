@@ -11,12 +11,12 @@
 </head>
 
 <body class="background">
-  <main class="container-fluid background">
+  <main class="container-fluid background user-select">
     <header>
       <h1 class="text-light text-center fa-align-justify mt-3">ListMaster 8000</h1>
       <img class="img-sizing img-fluid" src="assets/checklist.png" alt="">
     </header>
-    <div class="row">
+    <div class="row img-pointer">
       <div class="col">
         <form onsubmit="app.listController.makeList(event)">
           <input type="text" name="title" placeholder="List Title..." required />
@@ -24,7 +24,7 @@
         </form>
       </div>
     </div>
-    <div class="row" id="lists"></div>
+    <div class="row img-pointer" id="lists"></div>
   </main>
   <footer></footer>
   <script src="app/main.js" type="module"></script>

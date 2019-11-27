@@ -14,21 +14,21 @@ export default class List {
     <div class="card mt-3 card-background">
       <div class="card-body">
         <h5 class="card-title">${this.title}</h5>
-        <button class="btn btn-secondary" onclick="app.listController.deleteList('${
+         <button class="btn btn-danger" onclick="app.listController.deleteList('${
       this.id
       }')">Delete</button>
+      <form onsubmit="app.listController.addListItems(event, '${this.id}')">
+      <input
+      type="text"
+      name="listItems"
+      placeholder="List Item..."
+      required
+      />
+      <button class="btn btn-success" type="submit">Add List Item</button>
+      </form>
       <ul class="card-text">
             ${this.getListItemTemplate()}
         </ul>
-        <form onsubmit="app.listController.addListItems(event, '${this.id}')">
-        <input
-          type="text"
-          name="listItems"
-          placeholder="List Item..."
-          required
-        />
-        <button class="btn btn-success mt-3" type="submit">Add List Item</button>
-      </form>
       </div>
     </div>
   </div>
