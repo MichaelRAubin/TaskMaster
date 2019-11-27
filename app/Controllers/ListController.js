@@ -34,4 +34,16 @@ export default class ListController {
     _drawLists();
   }
 
+  addListItems(event, id) {
+    event.preventDefault();
+    let listItems = event.target.listItems.value;
+    ListService.addListItems(id, listItems);
+    _drawLists();
+  }
+
+  deleteListItems(listId, listIndex) {
+    ListService.deleteListItem(listId, listIndex);
+    _drawLists();
+  }
+
 }
