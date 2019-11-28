@@ -1,6 +1,9 @@
 import ListService from "../Services/ListService.js";
 import store from "../store.js";
 
+
+
+
 //TODO Don't forget to render to the screen after every data change.
 function _drawLists() {
   let lists = store.State.lists;
@@ -46,24 +49,73 @@ export default class ListController {
     _drawLists();
   }
 
+  // deleteListConfirm(id) {
+  //   var r = confirm("Are You Sure!");
+  //   if (r == true) {
+  //     ListService.deleteList(id);
+  //     _drawLists();
+  //   } else {
+  //     return
+  //   }
+  // }
+
   deleteListConfirm(id) {
-    var r = confirm("Are You Sure!");
-    if (r == true) {
-      ListService.deleteList(id);
-      _drawLists();
-    } else {
-      return
-    }
+    // @ts-ignore
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.value) {
+        ListService.deleteList(id);
+        _drawLists();
+        // @ts-ignore
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+      } else return
+    })
+
   }
+
+  // deleteListItemConfirm(listId, listIndex) {
+  //   var r = confirm("Are You Sure!");
+  //   if (r == true) {
+  //     ListService.deleteListItem(listId, listIndex);
+  //     _drawLists();
+  //   } else {
+  //     return
+  //   }
+  // }
 
   deleteListItemConfirm(listId, listIndex) {
-    var r = confirm("Are You Sure!");
-    if (r == true) {
-      ListService.deleteListItem(listId, listIndex);
-      _drawLists();
-    } else {
-      return
-    }
-  }
+    // @ts-ignore
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.value) {
+        ListService.deleteListItem(listId, listIndex);
+        _drawLists();
+        // @ts-ignore
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+      } else return
+    })
 
+  }
 }
