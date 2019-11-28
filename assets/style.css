@@ -13,7 +13,7 @@ html, body {
 }
 
 .card-background {
-    background: greenyellow;
+    background: mediumorchid;
 }
 
 .user-select {
@@ -22,4 +22,9 @@ html, body {
 
 .img-pointer {
     cursor: pointer;
+}
+
+.card-border {
+    border-color: #DCDCDC;
+    border-width: thick;
 }
