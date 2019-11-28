@@ -1,9 +1,6 @@
 import ListService from "../Services/ListService.js";
 import store from "../store.js";
 
-
-
-
 //TODO Don't forget to render to the screen after every data change.
 function _drawLists() {
   let lists = store.State.lists;
@@ -49,16 +46,6 @@ export default class ListController {
     _drawLists();
   }
 
-  // deleteListConfirm(id) {
-  //   var r = confirm("Are You Sure!");
-  //   if (r == true) {
-  //     ListService.deleteList(id);
-  //     _drawLists();
-  //   } else {
-  //     return
-  //   }
-  // }
-
   deleteListConfirm(id) {
     // @ts-ignore
     Swal.fire({
@@ -76,23 +63,13 @@ export default class ListController {
         // @ts-ignore
         Swal.fire(
           'Deleted!',
-          'Your file has been deleted.',
+          'Your list has been deleted.',
           'success'
         )
       } else return
     })
 
   }
-
-  // deleteListItemConfirm(listId, listIndex) {
-  //   var r = confirm("Are You Sure!");
-  //   if (r == true) {
-  //     ListService.deleteListItem(listId, listIndex);
-  //     _drawLists();
-  //   } else {
-  //     return
-  //   }
-  // }
 
   deleteListItemConfirm(listId, listIndex) {
     // @ts-ignore
@@ -111,7 +88,7 @@ export default class ListController {
         // @ts-ignore
         Swal.fire(
           'Deleted!',
-          'Your file has been deleted.',
+          'Your list item has been deleted.',
           'success'
         )
       } else return
