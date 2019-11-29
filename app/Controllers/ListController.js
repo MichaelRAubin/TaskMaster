@@ -1,7 +1,6 @@
 import ListService from "../Services/ListService.js";
 import store from "../store.js";
 
-//TODO Don't forget to render to the screen after every data change.
 function _drawLists() {
   let lists = store.State.lists;
   let template = "";
@@ -15,7 +14,6 @@ _drawLists();
 //Public
 export default class ListController {
   constructor() {
-    //NOTE: After the store loads, we can automatically call to draw the lists.
     _drawLists();
   }
 
@@ -28,11 +26,10 @@ export default class ListController {
     ListService.makeList(newList);
     _drawLists();
   }
-  //TODO: Your app will need the ability to create, and delete both lists and listItems
-  deleteList(id) {
-    ListService.deleteList(id);
-    _drawLists();
-  }
+  // deleteList(id) {
+  //   ListService.deleteList(id);
+  //   _drawLists();
+  // }
 
   addListItems(event, id) {
     event.preventDefault();
@@ -41,10 +38,10 @@ export default class ListController {
     _drawLists();
   }
 
-  deleteListItems(listId, listIndex) {
-    ListService.deleteListItem(listId, listIndex);
-    _drawLists();
-  }
+  // deleteListItems(listId, listIndex) {
+  //   ListService.deleteListItem(listId, listIndex);
+  //   _drawLists();
+  // }
 
   deleteListConfirm(id) {
     // @ts-ignore
