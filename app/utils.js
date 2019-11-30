@@ -1,7 +1,7 @@
 /**
  * @returns {string} A random string of characters
  */
-export const generateId = function() {
+export const generateId = function () {
   var result = "";
   var characters =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -11,3 +11,5 @@ export const generateId = function() {
   }
   return result;
 };
+
+

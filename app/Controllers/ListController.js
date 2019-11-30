@@ -1,6 +1,7 @@
 import ListService from "../Services/ListService.js";
 import store from "../store.js";
 
+
 function _drawLists() {
   let lists = store.State.lists;
   let template = "";
@@ -25,6 +26,13 @@ export default class ListController {
     };
     ListService.makeList(newList);
     _drawLists();
+    this.launch_toast();
+  }
+
+  launch_toast() {
+    var x = document.getElementById("toast")
+    x.className = "show";
+    setTimeout(function () { x.className = x.className.replace("show", ""); }, 5000);
   }
   // deleteList(id) {
   //   ListService.deleteList(id);
@@ -50,8 +58,8 @@ export default class ListController {
       text: "You won't be able to revert this!",
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
+      confirmButtonColor: '#BA55D3',
+      cancelButtonColor: '#808080',
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.value) {
@@ -75,8 +83,8 @@ export default class ListController {
       text: "You won't be able to revert this!",
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
+      confirmButtonColor: '#BA55D3',
+      cancelButtonColor: '#808080',
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.value) {

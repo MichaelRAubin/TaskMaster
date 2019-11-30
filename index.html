@@ -21,6 +21,9 @@
         <form onsubmit="app.listController.makeList(event)">
           <input type="text" name="title" placeholder="List Title..." required />
           <button type="submit">Add List</button>
+          <div id="toast">
+            <div id="desc">List created successfully!</div>
+          </div>
         </form>
       </div>
     </div>
@@ -28,6 +31,7 @@
   </main>
   <footer></footer>
   <script src="app/main.js" type="module"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://kit.fontawesome.com/9c2d120d7c.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </body>
