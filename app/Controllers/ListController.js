@@ -27,17 +27,18 @@ export default class ListController {
     ListService.makeList(newList);
     _drawLists();
     this.launch_toast();
+    this.formReset();
   }
 
+  formReset() {
+    // @ts-ignore
+    document.getElementById("newForm").reset();
+  }
   launch_toast() {
     var x = document.getElementById("toast")
     x.className = "show";
     setTimeout(function () { x.className = x.className.replace("show", ""); }, 5000);
   }
-  // deleteList(id) {
-  //   ListService.deleteList(id);
-  //   _drawLists();
-  // }
 
   addListItems(event, id) {
     event.preventDefault();
@@ -45,11 +46,6 @@ export default class ListController {
     ListService.addListItems(id, listItems);
     _drawLists();
   }
-
-  // deleteListItems(listId, listIndex) {
-  //   ListService.deleteListItem(listId, listIndex);
-  //   _drawLists();
-  // }
 
   deleteListConfirm(id) {
     // @ts-ignore
