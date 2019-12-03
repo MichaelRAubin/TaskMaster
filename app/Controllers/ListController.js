@@ -20,9 +20,9 @@ export default class ListController {
 
   makeList(event) {
     event.preventDefault();
-    let formData = event.target;
+    let form = event.target;
     let newList = {
-      title: formData.title.value
+      title: form.title.value
     };
     ListService.makeList(newList);
     _drawLists();
