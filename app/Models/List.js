@@ -4,7 +4,7 @@ export default class List {
   constructor(data) {
     this.id = data.id || generateId();
     this.title = data.title;
-    this.listItems = data.listItems || [];
+    this.listItem = data.listItem || [];
 
   }
   get Template() {
@@ -36,7 +36,7 @@ export default class List {
 
   getListItemTemplate() {
     let template = "";
-    this.listItems.forEach((listItem, index) => {
+    this.listItem.forEach((listItem, index) => {
       template += `<li>${listItem} <span onclick="app.listController.deleteListItemConfirm('${this.id}', ${index})"><i class="far fa-trash-alt"></i></span></li>`;
     });
     return template;

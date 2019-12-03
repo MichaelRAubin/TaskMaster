@@ -4,16 +4,16 @@ import store from "../store.js";
 //Public
 class ListService {
   deleteListItem(listId, listIndex) {
-    let listToDeleteListItems = store.State.lists.find(
+    let listToDeleteListItem = store.State.lists.find(
       list => list.id == listId
     );
-    listToDeleteListItems.listItems.splice(listIndex, 1);
+    listToDeleteListItem.listItem.splice(listIndex, 1);
     store.saveState();
   }
 
   addListItems(id, listItems) {
     let listToAddListItem = store.State.lists.find(list => list.id == id);
-    listToAddListItem.listItems.push(listItems);
+    listToAddListItem.listItem.push(listItems);
     store.saveState();
   }
 
